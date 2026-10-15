@@ -47,6 +47,8 @@ a { color: var(--vermelho); }
   font-size: 18px;
   color: var(--tinta);
 }
+.brand-mark::before { content: none; }
+.brand-mark::after { content: none; }
 .topbar nav { display: flex; gap: 22px; align-items: center; }
 .topbar nav a {
   text-decoration: none;
@@ -163,6 +165,7 @@ h2 {
   max-width: 640px;
   margin-bottom: 32px;
 }
+#sobre > .wrap > p, #publicacoes > .wrap > p, #videos > .wrap > p, #agendar > .wrap > p { color: var(--tinta-2); }
 
 .sobre-grid {
   display: grid;
@@ -185,6 +188,41 @@ h2 {
   font-size: 15px;
 }
 .cred-card li:last-child { border-bottom: none; }
+
+/* ---------- Depoimentos ---------- */
+.depo-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+.depo {
+  background: var(--branco);
+  border: 1px solid var(--linha);
+  border-radius: 18px;
+  padding: 26px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.depo-stars {
+  color: var(--vermelho);
+  letter-spacing: 3px;
+  font-size: 17px;
+}
+.depo blockquote {
+  font-family: 'Fraunces', Georgia, serif;
+  font-size: 17px;
+  line-height: 1.55;
+  color: var(--tinta);
+  flex: 1;
+}
+.depo figcaption {
+  font-size: 13px;
+  color: var(--tinta-2);
+  border-top: 1px solid var(--linha);
+  padding-top: 10px;
+}
+.depo-more { margin-top: 22px; color: var(--tinta-2); font-size: 15px; }
 
 /* ---------- Consultório ---------- */
 .cons-grid {
@@ -303,7 +341,7 @@ h2 {
 /* ---------- Responsivo ---------- */
 @media (max-width: 900px) {
   .hero-grid, .sobre-grid, .footer-grid { grid-template-columns: 1fr; }
-  .cons-grid, .vid-grid { grid-template-columns: 1fr 1fr; }
+  .cons-grid, .vid-grid, .depo-grid { grid-template-columns: 1fr 1fr; }
   .cons-cta { grid-row: auto; }
 }
 @media (max-width: 620px) {
@@ -323,5 +361,5 @@ h2 {
     padding-bottom: 4px;
   }
   .hero { padding: 48px 0 40px; }
-  .cons-grid, .vid-grid { grid-template-columns: 1fr; }
+  .cons-grid, .vid-grid, .depo-grid { grid-template-columns: 1fr; }
 }
